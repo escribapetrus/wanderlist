@@ -15,7 +15,10 @@ defmodule WanderlistWeb.Router do
 
   scope "/", WanderlistWeb do
     pipe_through :browser
+
     get "/users", UserController, :index
+    get "/users/new", UserController, :new
+    get "/users/create", UserController, :create
     get "/session/new", SessionController, :new
     get "/", PageController, :index
   end

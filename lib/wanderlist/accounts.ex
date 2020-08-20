@@ -13,4 +13,20 @@ defmodule Wanderlist.Accounts do
     get_users()
     |> Enum.filter(&(&1.id == id))
   end
+
+  # def create_user(attrs \\ %{}) do
+  #   %User
+  #   |> User.changeset(attrs)
+  #   |> Repo.insert()
+  # end
+
+  def change_registration(%User{} = user, params) do
+    User.changeset(user, params)
+  end
+
+  # def authenticate(username, password) do
+  #   query = from u in User,
+  #     inner_join: c in assoc(u, :credential),
+  #     where: c.
+  # end
 end
